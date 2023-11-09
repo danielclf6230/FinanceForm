@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Rose Country Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form id="myForm">
+        <div class="container mt-4 mb-4 p-4">
+            <div class="row mb-4">
+                <div class="col heading">
+                    <h1 class="pt-4"><strong>Wild Rose Country Finance</strong></h1>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <label class="form-label">Current Date</label>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="col">
+                    <label class="form-label">First name</label>
+                    <input type="text" autofocus id="firstName" class="form-control" placeholder="First name" pattern="[A-Za-z -]{1,25}" required>
+                </div>
+                <div class="col">
+                    <label class="form-label">Last name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Last name" pattern="[A-Za-z -]{1,25}" required>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-9">
+                    <label class="form-label">Address</label>
+                    <input type="text" id="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Postal Code</label>
+                    <input type="text" class="form-control" id="postalCode" placeholder="XXX-XXX" pattern="[A-Z]{1}[0-9]{1}[A-Z]{1}+ -+[0-9]{1}[A-Z]{1}[0-9]{1}" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto pt-3">
+                    <label class="form-label">Phone Phone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="###-###-####" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                </div>
+                <div class="col-4 pt-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="xxxxx@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}" required>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <label>Current Client: </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="currentClient" id="yes" value="yes">
+                        Yes
+                    </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="currentClient" id="no" value="no">
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <label>Gender: </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="gender" id="male" value="male">
+                        Male
+                    </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="gender" id="female" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-auto">
+                    <label class="form-label">Age: </label>
+                    <input type="number" class="form-control" id="age" min="18" required>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-auto">
+                    <label class="form-label">Annual Gross Income: </label>
+                    <input type="number" class="form-control" id="income" min="0">
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <label>Own or Rent Home: </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="home" id="own" value="own">
+                        Own
+                    </label>
+                    <label>
+                        <input class="form-check-input ms-2" type="radio" name="home" id="rent" value="rent">
+                        Rent Home
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="row mt-4">
+                <div class="col">
+                    <label class="form-label">Own any of the following: </label><br>
+                    <input type="checkbox" class="mb-3" id="vehicle" value="vehicle">
+                    <label for="Vehicle">Vehicle</label><br>
+                    <input type="checkbox" class="mb-3" id="rrsp" value="rrsp">
+                    <label for="RRSP">RRSP</label><br>
+                    <input type="checkbox" class="mb-3" id="tfsa" value="tfsa">
+                    <label for="TFSA">TFSA</label><br>
+                    <input type="checkbox" class="mb-3" id="rrif" value="rrif">
+                    <label for="RRIF">RRIF</label><br>
+                </div>
+            </div>
+            <div class="row py-2 ms-1">
+                <div class="col-auto mt-5">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            <div class="row py-2 mx-1">
+                <div class="col mt-5">
+                    <table id="customersTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Postal Code</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="customers.js"></script>
+</body>
+
+</html>
